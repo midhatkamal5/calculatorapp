@@ -32,6 +32,9 @@ function Calculator() {
                 case '/':
                     result = operand / currentValue;
                     break;
+                case '%':
+                    result = (operand/100) * currentValue;
+                    break;
                 default:
                     result = currentValue;
             }
@@ -99,6 +102,7 @@ function Calculator() {
                 <Button label="0" class="digit" click={() => handleClick(0)} />
                 <Button label="*" class="math" click={() => handleOperator('*')} />
                 <Button label="=" class="green" click={handleComputation} />
+                <Button label="%" class="math" click={() => handleOperator('%')} />
             </div>
             <div className="row5">
                 <Button label="Clear" class="clear" click={handleClear} />
